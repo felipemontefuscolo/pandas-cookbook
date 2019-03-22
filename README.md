@@ -14,6 +14,8 @@ a = pd.DataFrame({'A': [1. , 2., 3., 4.]}, index=index)
 a.groupby(lambda x: x.date()).agg(lambda x: x.sum())
 # sum method 2:
 a.resample('D').sum()
+# sum method 3:
+a.resample('D').apply(lambda x: x.sum())
 ```
 result:
 ```
